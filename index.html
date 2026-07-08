@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Card Cafe – 광주 TCG 커뮤니티의 중심. 포켓몬 카드, 원피스 카드, 토너먼트 일정 및 최신 재고를 확인하세요." />
+  <title>Card Cafe | 광주 TCG 커뮤니티</title>
+
+  <!-- Pretendard font for Korean/English support -->
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css"
+  />
+
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- ===== NAVIGATION ===== -->
+  <header class="site-header" id="site-header">
+    <nav class="nav container" aria-label="메인 내비게이션">
+      <!-- Logo -->
+      <a href="#home" class="nav__logo" aria-label="Card Cafe 홈으로 이동">
+        <div class="nav__logo-mark" aria-hidden="true">CC</div>
+        <span class="nav__logo-text">Card Cafe</span>
+      </a>
+
+      <!-- Desktop links -->
+      <ul class="nav__links" role="list">
+        <li><a href="#tournaments" class="nav__link">토너먼트</a></li>
+        <li><a href="#inventory" class="nav__link">재고</a></li>
+        <li><a href="#community" class="nav__link">커뮤니티</a></li>
+        <li><a href="#contact" class="nav__link">오시는 길</a></li>
+      </ul>
+
+      <!-- CTA + hamburger -->
+      <div class="nav__actions">
+        <a href="https://pf.kakao.com/_placeholder" class="btn btn--outline btn--sm" target="_blank" rel="noopener noreferrer">
+          카카오톡 문의
+        </a>
+        <button
+          class="nav__hamburger"
+          id="nav-hamburger"
+          aria-controls="mobile-menu"
+          aria-expanded="false"
+          aria-label="메뉴 열기"
+        >
+          <span class="hamburger-bar"></span>
+          <span class="hamburger-bar"></span>
+          <span class="hamburger-bar"></span>
+        </button>
+      </div>
+    </nav>
+
+    <!-- Mobile menu -->
+    <div class="mobile-menu" id="mobile-menu" aria-hidden="true" role="dialog" aria-label="모바일 메뉴">
+      <ul class="mobile-menu__links" role="list">
+        <li><a href="#tournaments" class="mobile-menu__link">토너먼트</a></li>
+        <li><a href="#inventory" class="mobile-menu__link">재고</a></li>
+        <li><a href="#community" class="mobile-menu__link">커뮤니티</a></li>
+        <li><a href="#contact" class="mobile-menu__link">오시는 길</a></li>
+        <li>
+          <a
+            href="https://pf.kakao.com/_placeholder"
+            class="btn btn--primary btn--full"
+            target="_blank"
+            rel="noopener noreferrer"
+          >카카오톡 문의</a>
+        </li>
+      </ul>
+    </div>
+  </header>
+
+  <main>
+    <!-- ===== HERO SECTION ===== -->
+    <section class="hero" id="home" aria-label="히어로 섹션">
+      <div class="hero__bg-overlay" aria-hidden="true"></div>
+
+      <!-- Store status widget placeholder -->
+      <div class="store-status" id="store-status-widget" aria-live="polite">
+        <span class="store-status__dot" id="store-status-dot"></span>
+        <span class="store-status__text" id="store-status-text">상태 확인 중…</span>
+      </div>
+
+      <div class="hero__content container">
+        <p class="hero__eyebrow">광주 동구 · 모래내시장역 인근</p>
+        <h1 class="hero__headline">
+          광주 TCG 커뮤니티의<br />
+          <span class="text-accent">심장</span>
+        </h1>
+        <p class="hero__sub">
+          포켓몬 카드 · 원피스 카드 · 매직 더 개더링<br />
+          매일 열리는 토너먼트, 초보자도 환영합니다.
+        </p>
+        <div class="hero__ctas">
+          <a
+            href="https://maps.google.com/?q=모래내시장역+카드카페"
+            class="btn btn--primary btn--lg"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <svg class="btn__icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            방문하기
+          </a>
+          <a href="#tournaments" class="btn btn--ghost btn--lg">토너먼트 일정 보기</a>
+        </div>
+      </div>
+
+      <!-- Decorative card art placeholders -->
+      <div class="hero__card-art" aria-hidden="true">
+        <div class="hero__card hero__card--1"></div>
+        <div class="hero__card hero__card--2"></div>
+        <div class="hero__card hero__card--3"></div>
+      </div>
+
+      <div class="hero__scroll-hint" aria-hidden="true">
+        <span>스크롤</span>
+        <div class="scroll-arrow"></div>
+      </div>
+    </section>
+
+    <!-- ===== TOURNAMENT SCHEDULE ===== -->
+    <section class="section tournaments" id="tournaments" aria-labelledby="tournaments-heading">
+      <div class="container">
+        <header class="section-header">
+          <h2 class="section-title" id="tournaments-heading">토너먼트 일정</h2>
+          <p class="section-sub">매일 다양한 대회가 열립니다. 지금 바로 등록하세요!</p>
+        </header>
+
+        <!-- Filter tabs -->
+        <div class="tabs" role="tablist" aria-label="게임 필터">
+          <button class="tab tab--active" role="tab" aria-selected="true" data-filter="all">전체</button>
+          <button class="tab" role="tab" aria-selected="false" data-filter="pokemon">포켓몬</button>
+          <button class="tab" role="tab" aria-selected="false" data-filter="onepiece">원피스</button>
+          <button class="tab" role="tab" aria-selected="false" data-filter="mtg">매직</button>
+        </div>
+
+        <div class="tournament-grid" id="tournament-grid" role="list" aria-live="polite">
+          <!-- Cards generated by JS -->
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== INVENTORY HIGHLIGHTS ===== -->
+    <section class="section inventory" id="inventory" aria-labelledby="inventory-heading">
+      <div class="container">
+        <header class="section-header">
+          <h2 class="section-title" id="inventory-heading">재고 하이라이트</h2>
+          <p class="section-sub">지금 바로 구매 가능한 인기 상품</p>
+        </header>
+
+        <!-- Hot Items -->
+        <h3 class="inventory__sub-title">
+          <span class="badge badge--hot">🔥 HOT</span> 인기 상품
+        </h3>
+        <div class="inventory-grid" id="hot-items-grid" role="list">
+          <!-- Generated by JS -->
+        </div>
+
+        <!-- Single Card Highlights -->
+        <h3 class="inventory__sub-title inventory__sub-title--mt">
+          <span class="badge badge--single">✨ SINGLES</span> 단품 카드 하이라이트
+        </h3>
+        <div class="inventory-grid inventory-grid--singles" id="singles-grid" role="list">
+          <!-- Generated by JS -->
+        </div>
+
+        <div class="inventory__cta-row">
+          <a href="#contact" class="btn btn--outline">재고 문의하기</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== COMMUNITY / SHOP INFO ===== -->
+    <section class="section community" id="community" aria-labelledby="community-heading">
+      <div class="container">
+        <div class="community__grid">
+          <!-- Philosophy -->
+          <div class="community__block">
+            <header class="section-header section-header--left">
+              <h2 class="section-title" id="community-heading">우리 가게의 이야기</h2>
+            </header>
+            <p class="community__text">
+              Card Cafe는 단순한 카드 게임 샵이 아닙니다. 학생들과 TCG 플레이어들이 모여
+              실력을 키우고, 함께 즐기는 커뮤니티 공간입니다. 누구든 처음 시작하는 분을 환영하며,
+              경험 많은 플레이어들이 기꺼이 룰과 전략을 알려드립니다.
+            </p>
+            <ul class="community__features" role="list">
+              <li class="feature-item">
+                <span class="feature-item__icon" aria-hidden="true">🎓</span>
+                <div>
+                  <strong>초보자 환영</strong>
+                  <p>처음 카드 게임을 접하는 분들을 위한 무료 튜토리얼 데모</p>
+                </div>
+              </li>
+              <li class="feature-item">
+                <span class="feature-item__icon" aria-hidden="true">📍</span>
+                <div>
+                  <strong>학생가 위치</strong>
+                  <p>모래내시장역 인근 – 학교 끝나고 바로 오세요</p>
+                </div>
+              </li>
+              <li class="feature-item">
+                <span class="feature-item__icon" aria-hidden="true">🏆</span>
+                <div>
+                  <strong>공식 대회 주최</strong>
+                  <p>포켓몬 공인 대회 및 자체 리그 운영</p>
+                </div>
+              </li>
+              <li class="feature-item">
+                <span class="feature-item__icon" aria-hidden="true">💬</span>
+                <div>
+                  <strong>커뮤니티 채널</strong>
+                  <p>카카오톡 채널을 통해 최신 이벤트 및 재고 소식을 빠르게 확인</p>
+                </div>
+              </li>
+            </ul>
+          </div>
+
+          <!-- New Player Callout -->
+          <div class="community__callout">
+            <div class="callout-card">
+              <div class="callout-card__icon" aria-hidden="true">🃏</div>
+              <h3 class="callout-card__title">처음 오시는 분께</h3>
+              <p class="callout-card__text">
+                카드 게임이 처음이라도 걱정 없어요! 매장에 방문하시면 스타터 덱 체험과
+                함께 기초 룰 설명을 무료로 제공합니다.
+              </p>
+              <a href="#contact" class="btn btn--primary">방문 예약 / 문의</a>
+            </div>
+
+            <!-- Kiosk / Store Status Widget placeholder -->
+            <div class="kiosk-widget" id="kiosk-widget" aria-label="매장 실시간 정보">
+              <h4 class="kiosk-widget__title">
+                <span aria-hidden="true">⚡</span> 실시간 매장 현황
+              </h4>
+              <div class="kiosk-widget__row">
+                <span>오늘 이벤트 잔여석</span>
+                <span class="kiosk-widget__value" id="kiosk-vacancies" data-kiosk="vacancies">—</span>
+              </div>
+              <div class="kiosk-widget__row">
+                <span>현재 영업 상태</span>
+                <span class="kiosk-widget__value" id="kiosk-open-status" data-kiosk="openStatus">—</span>
+              </div>
+              <div class="kiosk-widget__row">
+                <span>오늘 영업 시간</span>
+                <span class="kiosk-widget__value" id="kiosk-hours" data-kiosk="hours">—</span>
+              </div>
+              <p class="kiosk-widget__note">
+                * 데이터는 POS 시스템과 연동됩니다. (플레이스홀더)
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===== FOOTER / CONTACT ===== -->
+  <footer class="site-footer" id="contact" aria-label="푸터 – 오시는 길 및 연락처">
+    <div class="container">
+      <div class="footer__grid">
+
+        <!-- Brand + tagline -->
+        <div class="footer__brand">
+          <div class="nav__logo">
+            <div class="nav__logo-mark" aria-hidden="true">CC</div>
+            <span class="nav__logo-text">Card Cafe</span>
+          </div>
+          <p class="footer__tagline">광주 TCG 커뮤니티의 심장</p>
+          <a
+            href="https://pf.kakao.com/_placeholder"
+            class="btn btn--kakao"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="카카오톡 채널 바로가기"
+          >
+            <svg class="btn__icon" aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 3C6.477 3 2 6.477 2 10.8c0 2.716 1.608 5.096 4.04 6.565-.177.655-.64 2.374-.734 2.74-.116.454.166.447.35.326.144-.094 2.29-1.548 3.222-2.18.68.097 1.39.149 2.122.149 5.523 0 10-3.477 10-7.8S17.523 3 12 3z"/></svg>
+            카카오톡 채널
+          </a>
+        </div>
+
+        <!-- Address & Hours -->
+        <address class="footer__address" aria-label="매장 주소 및 영업시간">
+          <h3 class="footer__section-title">오시는 길</h3>
+          <p>
+            <svg class="footer__icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            광주광역시 동구 모래내시장역 인근<br />
+            (정확한 주소 업데이트 예정)
+          </p>
+          <a
+            href="https://maps.google.com/?q=모래내시장역+카드카페"
+            class="footer__link"
+            target="_blank"
+            rel="noopener noreferrer"
+          >Google Maps로 길찾기 →</a>
+
+          <h3 class="footer__section-title footer__section-title--mt">영업시간</h3>
+          <ul class="hours-list" role="list">
+            <li><span>월 – 금</span><span>12:00 – 22:00</span></li>
+            <li><span>토 – 일</span><span>11:00 – 23:00</span></li>
+            <li><span>공휴일</span><span>12:00 – 21:00</span></li>
+          </ul>
+        </address>
+
+        <!-- Quick links -->
+        <nav class="footer__nav" aria-label="푸터 내비게이션">
+          <h3 class="footer__section-title">바로가기</h3>
+          <ul role="list">
+            <li><a href="#tournaments" class="footer__link">토너먼트 일정</a></li>
+            <li><a href="#inventory" class="footer__link">재고 보기</a></li>
+            <li><a href="#community" class="footer__link">커뮤니티 소개</a></li>
+            <li><a href="https://pf.kakao.com/_placeholder" class="footer__link" target="_blank" rel="noopener noreferrer">카카오톡 채널</a></li>
+          </ul>
+        </nav>
+
+        <!-- Social / Contact -->
+        <div class="footer__social">
+          <h3 class="footer__section-title">문의 & SNS</h3>
+          <ul class="social-list" role="list">
+            <li>
+              <a href="https://pf.kakao.com/_placeholder" class="social-link" target="_blank" rel="noopener noreferrer" aria-label="카카오톡">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 3C6.477 3 2 6.477 2 10.8c0 2.716 1.608 5.096 4.04 6.565-.177.655-.64 2.374-.734 2.74-.116.454.166.447.35.326.144-.094 2.29-1.548 3.222-2.18.68.097 1.39.149 2.122.149 5.523 0 10-3.477 10-7.8S17.523 3 12 3z"/></svg>
+                카카오톡
+              </a>
+            </li>
+            <li>
+              <a href="https://instagram.com/placeholder" class="social-link" target="_blank" rel="noopener noreferrer" aria-label="인스타그램">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+                인스타그램
+              </a>
+            </li>
+          </ul>
+          <p class="footer__contact-note">
+            재고 문의, 대회 등록, 기타 사항은<br />
+            카카오톡 채널로 연락 주세요.
+          </p>
+        </div>
+
+      </div>
+
+      <div class="footer__bottom">
+        <p>© <span id="footer-year"></span> Card Cafe. All rights reserved.</p>
+        <p class="footer__bottom-note">광주 TCG 커뮤니티를 위해 💜 제작</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js" defer></script>
+</body>
+</html>
